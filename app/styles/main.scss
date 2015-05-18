@@ -1,5 +1,34 @@
 $icon-font-path: '../fonts/';
 
+//== Grid system
+//
+//## Define your custom responsive grid.
+
+//** Number of columns in the grid.
+$grid-columns:              12 !default;
+//** Padding between columns. Gets divided in half for the left and right.
+$grid-gutter-width:         60px !default;
+
+
+//== Container sizes
+//
+//## Define the maximum width of `.container` for different screen sizes.
+
+// Small screen / tablet
+$container-tablet:             (720px + $grid-gutter-width) !default;
+//** For `$screen-sm-min` and up.
+$container-sm:                 $container-tablet !default;
+
+// Medium screen / desktop
+$container-desktop:            (940px + $grid-gutter-width) !default;
+//** For `$screen-md-min` and up.
+$container-md:                 $container-desktop !default;
+
+// Large screen / wide desktop
+$container-large-desktop:      (940px + $grid-gutter-width) !default;
+//** For `$screen-lg-min` and up.
+$container-lg:                 $container-large-desktop !default;
+
 // bower:scss
 @import "bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
@@ -13,6 +42,8 @@ $darkblue: #033E7B;
 
 body {
   font-family: 'Lato', sans-serif;
+  font-size:16px;
+  line-height:20px;
 }
 
 .browserupgrade {
@@ -53,6 +84,10 @@ section.splash {
 section.intro {
   background-color: $yellow;
 
+  .section-image img {
+    margin-top:-120px;
+  }
+
   h1 {
     display:inline-block;
     width:455px;
@@ -66,29 +101,175 @@ section.intro {
   p {
     font-size:16px;
     color:$darkblue;
+    margin-bottom:30px;
+  }
+
+  .section-next img {
+    margin-top:-60px;
   }
 }
 
 section.how {
   background-color: $white;
+  color:$darkblue;
+
+  .steps {
+    position:relative;
+    height:685px;
+    font-size:15px;
+
+    .happy {
+      position:absolute;
+      top:50%;
+      left:50%;
+      margin-top:-114px;
+      margin-left:-135px;
+    }
+
+    .step {
+      position:absolute;
+      left:50%;
+
+      .desc {
+        padding:10px;
+      }
+
+      .asterix {
+        margin-left:5px;
+      }
+
+      &.text-below {
+        .desc {
+          margin-top:2px;
+        }
+      }
+
+      &.text-next {
+        img {
+          vertical-align:top;
+        }
+        .desc {
+          display:inline-block;
+          width:65%;
+        }
+      }
+    }
+
+    .step-1 { width:275px; top:0; margin-left:-130px; }
+    .step-2 { width:275px; top:60px; margin-left:172px; }
+    .step-3 { width:267px; top:334px; margin-left:190px; }
+    .step-4 { width:350px; top:559px; margin-left:60px; }
+    .step-5 { width:400px; top:550px; margin-left:-415px; }
+    .step-6 { width:240px; top:282px; margin-left:-442px; }
+    .step-7 { width:330px; top:80px; margin-left:-428px; img { margin-left:75px; } }
+  }
 }
 
 section.pricing {
   background-color: $pink;
+  color:$white;
+
+  .walking, .at-home {
+    margin-bottom:50px;
+  }
+
+  .price-row {
+    line-height: 44px;
+    border-bottom:1px solid $white;
+    &:last-child {
+      border-bottom:none;
+    }
+
+    .price {
+      float:right;
+    }
+  }
+
+  .availability {
+    p {
+      margin:30px 0;
+    }
+
+    .more-info {
+      img {
+        margin-right:8px;
+        vertical-align:top;
+      }
+    }
+  }
 }
 
 section.service {
   background-color: $white;
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  ul li {
+    background:url(../images/hartje.png) no-repeat top left;
+    background-size: 18px 16px;
+    background-position:0px 2px;
+    padding-left:40px;
+    font-weight:bold;
+    color:$darkblue;
+    margin-bottom:30px;
+  }
+
+  .section-next img {
+    margin-top:-50px;
+  }
 }
 
 section.love {
   background-color: $yellow;
 }
 
-footer {
-  background-color: $lightblue;
 
-  .legal {
-    background-color: $darkblue;
+/* contact section */
+
+section.contact {
+  background-color: $lightblue;
+  color:white;
+
+  .social {
+    p:first-child {
+      margin-bottom:24px;
+    }
   }
+
+  .coords {
+    text-align:right;
+
+    p {
+      margin:24px 0;
+    }
+
+    a, a:link, a:hover, a:visited {
+      color:white;
+    }
+  }
+}
+
+
+/* legal footer */
+
+footer {
+  background-color: $darkblue;
+  color:white;
+  font-size:11px;
+  padding:8px 0 18px 0;
+}
+
+
+/* grass strips */
+
+.grass {
+  background-color:$lightblue;
+  background-image:url('../images/gras8.png');
+  background-size:649px 38px;
+  background-position:center center;
+  height:38px;
+  margin-top:-30px;
 }

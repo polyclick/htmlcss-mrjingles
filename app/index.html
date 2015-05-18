@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>js mrjingles</title>
+    <title>Mr. Jingles</title>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
 
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
@@ -45,7 +45,9 @@
     <section class="intro">
       <div class="container">
         <div class="row">
-          <div class="col-md-4">Struivogel</div>
+          <div class="col-md-4 section-image">
+            <img src="images/struisvogel.png" width="257" height="350" class="center-block" />
+          </div>
           <div class="col-md-8">
             <h1>Op vakantie? Ziek? Overwerken?</h1>
             <p>Een betrouwbare en flexibele dierenoppas helpt je uit de nood!</p>
@@ -54,34 +56,75 @@
             <p>Vanzelfsprekend staan de veiligheid en gezondheid van je dier op de eerste plaats. Mag ik ook voor jouw lievelingsbeestje(s) komen zorgen?</p>
           </div>
         </div>
+        <div class="row section-next">
+          <div class="col-md-4">
+            <img src="images/HOEhetwerkt.png" width="137" height="112" class="center-block" />
+          </div>
+        </div>
       </div>
     </section>
 
     <section class="how">
-      How clockwise stuff here
+      <div class="container">
+        <div class="row steps">
+          <div class="happy"><img src="images/beesjeblijbaasjeblij.png" width="228" height="270" /></div>
+          <div class="step step-1 text-below">
+            <img src="images/vlieger-illu.png" width="79" height="75" />
+            <div class="desc">Neem contact op, bij voorkeur per mail.</div>
+          </div>
+          <div class="step step-2 text-below">
+            <img src="images/hallo-illu.png" width="133" height="120" />
+            <div class="desc">We maken een vrijblijvende afspraak om kennis te maken, bij jou thuis. We bespreken dan al je wensen en zetten onze afspraken op papier.<span class="asterix"><img src="images/asterisk.png" width="19" height="21" /></span></div>
+          </div>
+          <div class="step step-3 text-below">
+            <img src="images/sleutel-illu.png" width="125" height="90" />
+            <div class="desc">Je bezorgt me een dubbel van je huissleutel. Zeker vooraf goed testen!</div>
+          </div>
+          <div class="step step-4 text-next">
+            <img src="images/betalen-illu.png" width="109" height="84" />
+            <div class="desc">De betaling kan gebeuren via overschrijving vooraf of contant tijdens de oppasbeurt.</div>
+          </div>
+          <div class="step step-5 text-next">
+            <img src="images/aaien-illu.png" width="129" height="108" />
+            <div class="desc">Ik kom oppassen of wandelen en bezorg de sleutel terug of hou hem in bewaring voor een volgende keer.</div>
+          </div>
+          <div class="step step-6 text-below">
+            <img src="images/bericht-illu.png" width="95" height="95" />
+            <div class="desc">Je wordt dagelijks op de hoogte gehouden van onze avonturen en ontvangt na afloop een leuke herinnering.</div>
+          </div>
+          <div class="step step-7 text-below">
+            <img src="images/afspraak-illu.png" width="78" height="78" />
+            <div class="desc">Voor een volgende oppasbeurt dien je enkel contact op te nemen om je afspraak te plannen en indien nodig de sleutel te bezorgen.</div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="pricing">
       <div class="container">
-        <div class="row">
-          <div class="col-md-4">uitlaatservice</div>
+        <div class="row walking">
+          <div class="col-md-4"><img src="images/uitlaatservice.png" width="134" height="124" class="center-block" /></div>
           <div class="col-md-8">
-            <div>one</div>
-            <div>two</div>
-            <div>three</div>
+            <div class="price-row">kleine wandeling – half uur <div class="price">€ 10</div></div>
+            <div class="price-row">stevige wandeling – minumum een uur <div class="price">€ 10</div></div>
+            <div class="price-row">verzorging van ander huisdier tijdens uitlaatservice <div class="price">€ 10</div></div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-4">aan huis</div>
+        <div class="row at-home">
+          <div class="col-md-4"><img src="images/dierenoppasaanhuis.png" width="178" height="115" class="center-block" /></div>
           <div class="col-md-8">
-            <div>one</div>
-            <div>two</div>
-            <div>three</div>
+            <div class="price-row">kort bezoek – half uur <div class="price">€ 10</div></div>
+            <div class="price-row">uitgebreid bezoek – minumum een uur <div class="price">€ 10</div></div>
+            <div class="price-row">twee bezoeken op dezelfde dag – twee maal een half uur <div class="price">€ 10</div></div>
           </div>
         </div>
-        <div class="row">
+        <div class="row availability">
           <div class="col-md-8 col-md-offset-4">
             <strong>Beschikbaarheid</strong>
+            <p>zaterdag tot en met maandag: de hele dag<br/>dinsdag tot en met vrijdag: na 18 uur</p>
+            <span class="more-info">
+              <img src="images/pijltje-wit.png" width="26" height="20" />Meer info over de prijzen vind je <strong>hier</strong>.
+            </span>
           </div>
         </div>
       </div>
@@ -90,7 +133,7 @@
     <section class="service">
       <div class="container">
         <div class="row">
-          <div class="col-md-8">
+          <div class="col-md-7">
             <ul>
               <li>Alle bijzondere en unieke wensen voor jouw dier(en) zijn bespreekbaar. Ook als je geen dieren hebt en op vakantie gaat, kan je beroep doen op de (huis)oppasdienst.</li>
               <li>Géén extra kosten voor weekends, feestdagen of last­-minute afspraken</li>
@@ -98,12 +141,12 @@
               <li>Breng je een nieuwe klant aan? Dan ontvang je een kortingsbon ter waarde van 15 euro voor een volgende oppasbeurt.</li>
             </ul>
           </div>
-          <div class="col-md-4">
-            Speciale service
+          <div class="col-md-5">
+            <img src="images/specialeservice.png" width="226" height="354" class="center-block" />
           </div>
         </div>
-        <div class="row">
-          wat baasjes vertellen
+        <div class="row section-next">
+          <img src="images/WATbaasjesvertellen.png" width="161" height="97" class="center-block" />
         </div>
       </div>
     </section>
@@ -113,30 +156,37 @@
     </section>
 
 
-    <section class="footer">
+    <section class="contact">
       <div class="container">
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-6 social">
             <p>Wil je meer weten? Stuur me gerust een mailtje!</p>
             <p>Om op de hoogte te blijven van al mijn activiteiten<br/>kan je me volgen op Facebook of Instagram!</p>
           </div>
-          <div class="col-md-6">
-            <p>Freya Storms</p>
+          <div class="col-md-6 coords">
+            <strong>Freya Storms</strong>
             <p>
               <a href="mailto:hello@mrjingles.com">hello@mrjingles.com</a><br/>
               <span>0485 62 88 99</span>
             </p>
-            <img src="facebook" alt="facebook" />
-            <img src="instagram" alt="instagram" />
+
+            <a href="http://facebook.com/mrjinglesworld" target="_blank">
+              <img src="images/FB-icoon-wit.png" height="23" width="23" alt="http://facebook.com/mrjinglesworld" />
+            </a>
+            <a href="https://instagram.com/_mrjingles_" target="_blank">
+              <img src="images/instagram-icoon-wit.png" height="23" width="23" alt="https://instagram.com/_mrjingles_" />
+            </a>
           </div>
         </div>
       </div>
     </section>
 
+    <div class="grass"></div>
+
     <footer>
       <div class="container">
         <div class="row">
-          <div class="col-md-12">legal</div>
+          <div class="col-md-12">&copy; <span year></span> Mr. Jingles - Alle rechten voorbehouden - voorwaarden en bepalingen</div>
         </div>
       </div>
     </footer>
