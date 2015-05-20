@@ -1,33 +1,24 @@
 $icon-font-path: '../fonts/';
 
-//== Grid system
-//
-//## Define your custom responsive grid.
+// Media queries breakpoints
+$screen-xs: 480px; // Extra small screen
+$screen-sm: 768px; // Small screen
+$screen-md: 768px; // Medium screen
+$screen-lg: 1024px; // Large screen
 
-//** Number of columns in the grid.
-$grid-columns:              12 !default;
-//** Padding between columns. Gets divided in half for the left and right.
-$grid-gutter-width:         60px !default;
+// Grid system.
+// Define your custom responsive grid.
+// Number of columns in the grid &
+//    Padding between columns. Gets divided in half for the left and right.
+$grid-columns: 12;
+$grid-gutter-width: 60px;
 
 
-//== Container sizes
-//
-//## Define the maximum width of `.container` for different screen sizes.
-
-// Small screen / tablet
-$container-tablet:             (720px + $grid-gutter-width) !default;
-//** For `$screen-sm-min` and up.
-$container-sm:                 $container-tablet !default;
-
-// Medium screen / desktop
-$container-desktop:            (940px + $grid-gutter-width) !default;
-//** For `$screen-md-min` and up.
-$container-md:                 $container-desktop !default;
-
-// Large screen / wide desktop
-$container-large-desktop:      (940px + $grid-gutter-width) !default;
-//** For `$screen-lg-min` and up.
-$container-lg:                 $container-large-desktop !default;
+// Container sizes.
+// Define the maximum width of `.container` for different screen sizes.
+$container-tablet: (640px + $grid-gutter-width);
+$container-desktop: (700px + $grid-gutter-width);
+$container-large-desktop: (940px + $grid-gutter-width);
 
 // bower:scss
 @import "bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
@@ -59,7 +50,7 @@ section {
 
 header {
   background-color: $lightblue;
-  height:70px;
+  height:50px;
 }
 
 section.splash {
@@ -89,13 +80,30 @@ section.intro {
   }
 
   h1 {
+    margin:0;
+    @media (min-width: $screen-lg-min) {
+      margin-bottom:20px;
+    }
+  }
+
+  h1.holidays-sick {
     display:inline-block;
-    width:455px;
+    width:277px;
     height:33px;
-    background:url('../images/opvakantie-ziek-overwerken.png') no-repeat top left;
+    background:url('../images/opvakantie-ziek.png') no-repeat top left;
+    background-size:contain;
+    font-size:0;
+  }
+
+  h1.overtime {
+    display:inline-block;
+    width:178px;
+    height:33px;
+    background:url('../images/overwerken.png') no-repeat top left;
     background-size:contain;
     font-size:0;
     margin-bottom:20px;
+    display:inline-block;
   }
 
   p {
@@ -105,7 +113,9 @@ section.intro {
   }
 
   .section-next img {
-    margin-top:-60px;
+    @media (min-width: $screen-md-min) {
+      margin-top:-60px;
+    }
   }
 }
 
@@ -117,84 +127,166 @@ section.how {
     position:relative;
     height:685px;
     font-size:15px;
+    @media (min-width: $screen-md-min) {
+      font-size:13px;
+    }
 
     .happy {
-      position:absolute;
-      top:50%;
-      left:50%;
-      margin-top:-114px;
-      margin-left:-135px;
+      $happy-width: 228px;
+      $happy-height: 270px;
+      $happy-ratio: $happy-width / $happy-height;
+      $happy-small-width: $happy-width * 0.9;
+      $happy-small-height: $happy-width * $happy-ratio;
+
+      display:none;
+
+      @media (min-width: $screen-md-min) {
+        display:block;
+        position:absolute;
+        top:50%;
+        left:50%;
+
+        width:$happy-small-width;
+        height:$happy-small-height;
+        margin-top:-$happy-small-width/2;
+        margin-left:-$happy-small-height/2;
+      }
+
+      @media (min-width: $screen-lg-min) {
+
+        height:$happy-height;
+        margin-left:-$happy-height/2;
+        margin-top:-$happy-width/2;
+        width:$happy-width;
+      }
+
+      img {
+        width:100%;
+      }
     }
 
     .step {
-      position:absolute;
-      left:50%;
 
-      .desc {
-        padding:10px;
+      @media (min-width: $screen-md-min) {
+        position:absolute;
+        left:50%;
+
+        &.step-1 { width:275px; top:0; margin-left:-130px; }
+        &.step-2 { width:275px; top:60px; margin-left:172px; }
+        &.step-3 { width:267px; top:334px; margin-left:190px; }
+        &.step-4 { width:350px; top:559px; margin-left:60px; }
+        &.step-5 { width:400px; top:550px; margin-left:-415px; }
+        &.step-6 { width:240px; top:282px; margin-left:-442px; }
+        &.step-7 { width:330px; top:80px; margin-left:-428px; img { margin-left:75px; } }
       }
 
-      .asterix {
-        margin-left:5px;
-      }
+      .desc { padding:10px; }
+      .asterix { margin-left:5px; }
 
       &.text-below {
-        .desc {
-          margin-top:2px;
-        }
+        .desc { margin-top:2px; }
       }
 
       &.text-next {
-        img {
-          vertical-align:top;
-        }
-        .desc {
-          display:inline-block;
-          width:65%;
-        }
+        img { vertical-align:top; }
+        .desc { display:inline-block; width:65%; }
       }
     }
 
-    .step-1 { width:275px; top:0; margin-left:-130px; }
-    .step-2 { width:275px; top:60px; margin-left:172px; }
-    .step-3 { width:267px; top:334px; margin-left:190px; }
-    .step-4 { width:350px; top:559px; margin-left:60px; }
-    .step-5 { width:400px; top:550px; margin-left:-415px; }
-    .step-6 { width:240px; top:282px; margin-left:-442px; }
-    .step-7 { width:330px; top:80px; margin-left:-428px; img { margin-left:75px; } }
+    .arrow {
+      display:none;
+
+      @media (min-width: $screen-md-min) {
+        display:block;
+        position:absolute;
+        left:50%;
+        z-index:1;
+
+        &.arrow-1 { top:33px; margin-left:62px; }
+        &.arrow-2 { top:332px; margin-left:335px; }
+        &.arrow-3 { top:510px; margin-left:300px; }
+        &.arrow-4 { top:663px; margin-left:0; }
+        &.arrow-5 { top:490px; margin-left:-285px; }
+        &.arrow-6 { top:262px; margin-left:-295px; }
+      }
+    }
+  }
+
+  .asterix-explain {
+    font-size:14px;
+    padding-left:80px;
+
+    .asterix {
+      float:left;
+    }
+
+    p {
+      color:$darkblue;
+      margin-left: 35px;
+    }
+
+    .extra {
+      font-size:13px;
+      margin-left: 35px;
+      display:inline-block;
+    }
+  }
+
+  .section-next {
+    margin-top:40px;
+
+    .next-button img {
+      margin-top:50px;
+    }
   }
 }
 
 section.pricing {
   background-color: $pink;
   color:$white;
-
-  .walking, .at-home {
+/*
+  @media (min-width: $screen-sm-min) {
+    background-color:red;
+  }
+  @media (min-width: $screen-md-min) {
+    background-color:blue;
+  }
+  @media (min-width: $screen-lg-min) {
+    background-color:green;
+  }
+*/
+  .price-table {
     margin-bottom:50px;
+    margin-top:25px;
+    @media (min-width: $screen-md-min) {
+      margin-top:0px;
+    }
+
+    .price-row {
+      border-bottom:1px solid $white;
+      padding:12px 0;
+      &:last-child { border-bottom:none; }
+
+      .price { float:right; margin-left:30px; }
+    }
   }
 
-  .price-row {
-    line-height: 44px;
-    border-bottom:1px solid $white;
-    &:last-child {
-      border-bottom:none;
-    }
 
-    .price {
-      float:right;
-    }
+  .arrow {
+    margin-right:8px;
+    vertical-align:top;
   }
 
   .availability {
+    margin-bottom:50px;
     p {
-      margin:30px 0;
+      margin-top:10px;
     }
+  }
 
-    .more-info {
-      img {
-        margin-right:8px;
-        vertical-align:top;
-      }
+  .more-info {
+    @media (min-width: $screen-md-min) {
+      margin-left:-34px;
     }
   }
 }
@@ -217,8 +309,17 @@ section.service {
     margin-bottom:30px;
   }
 
+  .section-image img {
+    display:none;
+    @media (min-width: $screen-md-min) {
+      display:block;
+    }
+  }
+
   .section-next img {
-    margin-top:-50px;
+    @media (min-width: $screen-lg-min) {
+      margin-top:-50px;
+    }
   }
 }
 
@@ -234,16 +335,27 @@ section.contact {
   color:white;
 
   .social {
+    display:none;
+    @media (min-width: $screen-md-min) {
+      display:block;
+    }
+
     p:first-child {
       margin-bottom:24px;
     }
   }
 
   .coords {
-    text-align:right;
+    @media (min-width: $screen-md-min) {
+      text-align:right;
+    }
 
     p {
       margin:24px 0;
+    }
+
+    .facebook {
+      margin-right:10px;
     }
 
     a, a:link, a:hover, a:visited {
@@ -265,11 +377,20 @@ footer {
 
 /* grass strips */
 
-.grass {
+.grass-horizontal {
   background-color:$lightblue;
-  background-image:url('../images/gras8.png');
   background-size:649px 38px;
   background-position:center center;
   height:38px;
   margin-top:-30px;
+
+  &.grass-white {
+    background-image:url('../images/gras1.png');
+  }
+
+  &.grass-darkblue {
+    background-image:url('../images/gras8.png');
+  }
 }
+
+
