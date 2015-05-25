@@ -396,6 +396,18 @@ section.pricing {
     @media (min-width: $screen-md-min) {
       margin-left:-34px;
     }
+
+    &:hover {
+      text-decoration:underline;
+      cursor:pointer;
+    }
+  }
+
+  .more-info-panel {
+    overflow:hidden;
+    height:0px;
+
+    transition: height 750ms;
   }
 }
 
@@ -480,6 +492,13 @@ footer {
   color:white;
   font-size:11px;
   padding:8px 0 18px 0;
+
+  .legal-link {
+    cursor:pointer;
+    &:hover {
+      text-decoration:underline;
+    }
+  }
 }
 
 
@@ -499,4 +518,13 @@ footer {
   &.grass-darkblue {
     background-image:url('../images/gras8.png');
   }
+}
+
+
+/* legal */
+body.legal {
+  background-color:$yellow;
+  margin:30px;
+  color:$darkblue;
+  font-size:14px;
 }
