@@ -521,6 +521,82 @@ section.service {
 
 section.love {
   background-color: $yellow;
+
+  .section-content {
+    position:relative;
+
+    .names {
+      position:relative;
+      height:375px;
+
+      .name {
+        position:absolute;
+        top:0;
+        left:0;
+        cursor:pointer;
+
+        transition:opacity 150ms ease-in;
+        opacity:1;
+
+        &.name-1 { top:255px; left:80px; }
+        &.name-2 { top:65px; left:175px; }
+        &.name-3 { top:215px; left:360px; }
+        &.name-4 { top:25px; left:430px; }
+        &.name-5 { top:200px; left:575px; }
+        &.name-6 { top:65px; left:725px; }
+      }
+    }
+
+    .detail {
+      position:absolute;
+      z-index:100;
+      top:0;
+      left:0;
+      width:0;
+      height:0;
+
+      .name {
+        transition:opacity 2000ms ease-out;
+        transition-delay: 500ms;
+        opacity:0;
+        width:0;
+        height:0;
+        overflow:hidden;
+      }
+
+      .text { display:none; }
+    }
+
+    &.detail-opened {
+      .name {
+        opacity:0;
+
+        &.name-1 { transition-delay:0ms }
+        &.name-2 { transition-delay:50ms }
+        &.name-3 { transition-delay:100ms }
+        &.name-4 { transition-delay:150ms }
+        &.name-5 { transition-delay:175ms }
+        &.name-6 { transition-delay:200ms }
+      }
+
+      .detail {
+        width:100%;
+        height:100%;
+
+        .name {
+          &.shown {
+            width:auto;
+            height:auto;
+            opacity:1;
+          }
+        }
+      }
+    }
+  }
+
+  .section-image {
+    margin-top:-50px;
+  }
 }
 
 

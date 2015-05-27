@@ -89,6 +89,28 @@ $(function() {
     return false;
   });
 
+  // names overview & detail
+  $('.names .name').click(function(event){
+    event.preventDefault();
+    var $content = $('.love .section-content');
+    $content.addClass('detail-opened');
+
+    /*
+
+    $detail.css('display', 'block');
+    $detail.find('.name, .text')
+      .css('display', 'none')
+      .css('opacity', 0);
+    */
+
+    var index = $(this).attr('data-index');
+    var $detail = $content.find('.detail');
+    $detail.find('.name-' + index).addClass('shown');
+    $detail.find('.text-' + index).addClass('shown');
+
+    return false;
+  });
+
   // resize logic
   $(window).resize(function(){
     $('.more-info-panel').height(0);
