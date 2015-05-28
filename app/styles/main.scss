@@ -589,45 +589,44 @@ section.love {
 
     .detail {
       position:absolute;
+      overflow:hidden;
       z-index:100;
-      top:60px;
+      top:0;
       left:0;
       width:0;
       height:0;
+      opacity:0;
+
+      transition:opacity 500ms ease-out;
+      transition-delay: 750ms;
 
       .name {
-        height:0;
-        opacity:0;
-        overflow:hidden;
-        width:0;
-
-        transition:opacity 500ms ease-out;
-        transition-delay: 750ms;
+        display:none;
+        height:375px;
+        vertical-align:middle;
       }
 
       .text {
         color:$darkblue;
-        height:0;
-        opacity:0;
-        overflow:hidden;
-        position:absolute;
-        width:0;
-
-        transition:opacity 500ms ease-out;
-        transition-delay: 750ms;
+        display:none;
+        height:375px;
+        vertical-align:middle;
       }
 
-      .close {
-        height:0;
-        opacity:0;
-        overflow:hidden;
+      .close-button {
         position:absolute;
         right:0;
         top:0;
-        width:0;
+        width:25px;
+        height:25px;
+        background:url('../images/sluit-icoon.png') no-repeat center center;
+        background-size:contain;
+        cursor:pointer;
+        opacity:0.75;
 
-        transition:opacity 500ms ease-out;
-        transition-delay: 750ms;
+        &:hover {
+          opacity:1;
+        }
       }
     }
 
@@ -648,27 +647,18 @@ section.love {
       .detail {
         width:100%;
         height:auto;
+        opacity:1;
 
         .name {
           &.shown {
-            width:auto;
-            height:auto;
-            opacity:1;
+            display:table-cell;
           }
         }
 
         .text {
           &.shown {
-            width:auto;
-            height:auto;
-            opacity:1;
+            display:table-cell;
           }
-        }
-
-        .close {
-          width:auto;
-          height:auto;
-          opacity:1;
         }
       }
     }

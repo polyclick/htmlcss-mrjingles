@@ -104,7 +104,7 @@ $(function() {
     return false;
   });
 
-  $('.love .detail .close').click(function(event){
+  $('.love .detail .close-button').click(function(event){
     event.preventDefault();
 
     var $content = $('.love .section-content');
