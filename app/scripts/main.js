@@ -92,21 +92,27 @@ $(function() {
   // names overview & detail
   $('.names .name').click(function(event){
     event.preventDefault();
+
     var $content = $('.love .section-content');
     $content.addClass('detail-opened');
-
-    /*
-
-    $detail.css('display', 'block');
-    $detail.find('.name, .text')
-      .css('display', 'none')
-      .css('opacity', 0);
-    */
 
     var index = $(this).attr('data-index');
     var $detail = $content.find('.detail');
     $detail.find('.name-' + index).addClass('shown');
     $detail.find('.text-' + index).addClass('shown');
+
+    return false;
+  });
+
+  $('.love .detail .close').click(function(event){
+    event.preventDefault();
+
+    var $content = $('.love .section-content');
+    $content.removeClass('detail-opened');
+
+    var $detail = $content.find('.detail');
+    $detail.find('.name').removeClass('shown');
+    $detail.find('.text').removeClass('shown');
 
     return false;
   });
