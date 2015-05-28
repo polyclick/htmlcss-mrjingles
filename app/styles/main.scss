@@ -65,10 +65,10 @@ header {
   }
 
   .header-grass {
-    margin-top:-6px;
+    margin-top:-6px !important;
 
     @media (min-width: $screen-xs-min) {
-      margin-top:16px;
+      margin-top:16px !important;
     }
   }
 
@@ -185,6 +185,10 @@ section.intro {
     font-size:16px;
     color:$darkblue;
     margin-bottom:30px;
+  }
+
+  .section-next {
+    margin-bottom:24px;
   }
 
   .section-next img {
@@ -422,17 +426,11 @@ section.how {
 section.pricing {
   background-color: $pink;
   color:$white;
-/*
-  @media (min-width: $screen-sm-min) {
-    background-color:red;
+
+  .container {
+    margin-bottom:20px;
   }
-  @media (min-width: $screen-md-min) {
-    background-color:blue;
-  }
-  @media (min-width: $screen-lg-min) {
-    background-color:green;
-  }
-*/
+
   .price-table {
     margin-bottom:50px;
     margin-top:25px;
@@ -490,6 +488,12 @@ section.pricing {
 section.service {
   background-color: $white;
 
+  padding-bottom:10px;
+
+  .container {
+    margin-top:20px;
+  }
+
   ul {
     list-style: none;
     padding: 0;
@@ -538,12 +542,48 @@ section.love {
         transition:opacity 150ms ease-in;
         opacity:1;
 
-        &.name-1 { top:255px; left:80px; }
-        &.name-2 { top:65px; left:175px; }
-        &.name-3 { top:215px; left:360px; }
-        &.name-4 { top:25px; left:430px; }
-        &.name-5 { top:200px; left:575px; }
-        &.name-6 { top:65px; left:725px; }
+
+        &.name-1 { // ziggy
+          top:255px; left:40px;
+          @media (min-width: $screen-lg-min) {
+            top:255px; left:80px;
+          }
+        }
+
+        &.name-2 { // sookie
+          top:65px; left:135px;
+          @media (min-width: $screen-lg-min) {
+            top:65px; left:175px;
+          }
+        }
+
+        &.name-3 { // oscar
+          top:225px; left:300px;
+          @media (min-width: $screen-lg-min) {
+            top:215px; left:360px;
+          }
+        }
+
+        &.name-4 { // laurent
+          top:25px; left:330px;
+          @media (min-width: $screen-lg-min) {
+            top:25px; left:430px;
+          }
+        }
+
+        &.name-5 { // polleke
+          top:220px; left:500px;
+          @media (min-width: $screen-lg-min) {
+            top:200px; left:575px;
+          }
+        }
+
+        &.name-6 { // nelson
+          top:65px; left:590px;
+          @media (min-width: $screen-lg-min) {
+            top:65px; left:725px;
+          }
+        }
       }
     }
 
@@ -606,6 +646,9 @@ section.contact {
   background-color: $lightblue;
   color:white;
 
+  padding-top:120px;
+  margin-top:-70px;
+
   .social {
     display:none;
     @media (min-width: $screen-md-min) {
@@ -636,6 +679,24 @@ section.contact {
   }
 }
 
+/* section overlay image */
+.section-overlap-image {
+
+  .row {
+    position:relative;
+  }
+  img {
+    position:absolute;
+    top:-170px;
+    right:15px;
+
+    @media (min-width: $screen-lg-min) {
+      top:-150px;
+      right:75px;
+    }
+  }
+}
+
 
 /* legal footer */
 
@@ -656,19 +717,60 @@ footer {
 
 /* grass strips */
 
-.grass-horizontal {
-  background-color:$lightblue;
+.grass {
   background-size:649px 38px;
   background-position:center center;
   height:38px;
-  margin-top:-30px;
 
-  &.grass-white {
-    background-image:url('../images/gras1.png');
+  background-color:white;
+
+  &.grass-horizontal {
+    margin-top:-30px;
   }
 
-  &.grass-darkblue {
-    background-image:url('../images/gras8.png');
+  &.grass-tilted {
+    height:70px;
+    width:110%;
+    background-repeat:repeat-x;
+    background-position:bottom center;
+    transform: rotate(1.5deg);
+    transform-origin: top left;
+    -webkit-backface-visibility:hidden;
+  }
+
+  &.grass-reverse-tilted {
+    transform: rotate(-1.8deg);
+    transform-origin: top left;
+    margin-left:-5%;
+  }
+
+  &.grass-white { background-image:url('../images/gras-wit.png'); }
+  &.grass-lightblue { background-image:url('../images/gras-lichtblauw.png'); }
+  &.grass-darkblue { background-image:url('../images/gras-donkerblauw.png'); }
+  &.grass-yellow { background-image:url('../images/gras-geel.png'); }
+  &.grass-pink { background-image:url('../images/gras-roos.png'); }
+
+  &.grassbg-lightblue { background-color:$lightblue; }
+  &.grassbg-yellow { background-color:$yellow; }
+  &.grassbg-pink { background-color:$pink; }
+
+  &.grass-intro-how {
+    margin-top:-50px; margin-top:-70px;
+  }
+
+  &.grass-pricing-service {
+    height:70px;
+    margin-top:-25px;
+
+    @media (min-width: $screen-md-min) {
+      height:84px;
+      margin-top:0px;
+    }
+  }
+
+  &.grass-love-contact {
+    height:90px;
+    margin-bottom:-20px;
   }
 }
 
