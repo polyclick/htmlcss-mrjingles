@@ -4,6 +4,7 @@ $(function() {
 
   // variables
   var page = $('html, body');
+  var width = $(window).width();
 
   // utility function: open popup in center of the screen
   function openCenteredPopup(url, title, w, h) {
@@ -104,6 +105,7 @@ $(function() {
     return false;
   });
 
+  // close button
   $('.love .detail .close-button').click(function(event){
     event.preventDefault();
 
@@ -117,8 +119,27 @@ $(function() {
     return false;
   });
 
+  // rumble
+  $('.shake img').each(function(){
+    $(this).jrumble({
+      x: 0,
+      y: 0,
+      rotation: 3 + Math.round((Math.random() * 4)),
+      speed:20
+    });
+  });
+
+  $('.shake img').hover(function(){
+    $(this).trigger('startRumble');
+  }, function(){
+    $(this).trigger('stopRumble');
+  });
+
   // resize logic
   $(window).resize(function(){
-    $('.more-info-panel').height(0);
+    if($(window).width() !== width) {
+      $('.more-info-panel').height(0);
+      width = $(window).width();
+    }
   });
 });
