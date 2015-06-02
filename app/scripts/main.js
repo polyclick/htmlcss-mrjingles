@@ -2,6 +2,9 @@
 
 $(function() {
 
+  // attach fastclick
+  FastClick.attach(document.body);
+
   // variables
   var page = $('html, body');
   var width = $(window).width();
