@@ -867,11 +867,11 @@ outline: 1px solid transparent;
     margin-left:-5%;
   }
 
-  &.grass-white { /*background-image:url('../images/gras-wit.png');*/ }
-  &.grass-lightblue { /*background-image:url('../images/gras-lichtblauw.png');*/ }
-  &.grass-darkblue { /*background-image:url('../images/gras-donkerblauw.png');*/ }
-  &.grass-yellow { /*background-image:url('../images/gras-geel.png');*/ }
-  &.grass-pink { /*background-image:url('../images/gras-roos.png');*/ }
+  &.grass-white { background-image:url('../images/gras-wit.png'); }
+  &.grass-lightblue { background-image:url('../images/gras-lichtblauw.png'); }
+  &.grass-darkblue { background-image:url('../images/gras-donkerblauw.png'); }
+  &.grass-yellow { background-image:url('../images/gras-geel.png'); }
+  &.grass-pink { background-image:url('../images/gras-roos.png'); }
 
   &.grassbg-lightblue { background-color:$lightblue; }
   &.grassbg-yellow { background-color:$yellow; }
