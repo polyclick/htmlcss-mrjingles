@@ -123,7 +123,7 @@ $(function() {
   });
 
   // rumble
-  $('.shake img').each(function(){
+  $('.shake img, .pricing-badge').each(function(){
     $(this).jrumble({
       x: 0,
       y: 0,
@@ -132,11 +132,26 @@ $(function() {
     });
   });
 
-  $('.shake img').hover(function(){
+  $('.shake img, .pricing-badge').hover(function(){
     $(this).trigger('startRumble');
   }, function(){
     $(this).trigger('stopRumble');
   });
+
+  // section image spritemaps
+  $('.section-image-animated')
+    .mouseenter(function(){
+
+      var time = parseFloat($(this).attr('data-anim-total-time'));
+      var steps = parseInt($(this).attr('data-anim-frames'));
+      var yoyo = $(this).is('[data-anim-yoyo]');
+
+      TweenMax.to($(this), time, {css:{backgroundPosition:'100% 0px'}, ease:SteppedEase.config(steps-1), repeat:-1, yoyo:yoyo});
+    }).mouseleave(function(){
+      TweenMax.killTweensOf($(this));
+      $(this).css('background-position', '0px 0px');
+    });
+
 
   // resize logic
   $(window).resize(function(){
