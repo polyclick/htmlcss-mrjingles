@@ -201,6 +201,12 @@ section.intro {
     display:inline-block;
   }
 
+  .intro-text {
+    @media (min-width: $screen-md-min) and (max-width: $screen-lg-min) {
+      width:66%;
+    }
+  }
+
   p {
     font-size:16px;
     color:$darkblue;
@@ -244,6 +250,11 @@ section.how {
       top:255px;
       left:265px;
       background-image:url('../images/beesjeblijbaasjeblij-spritesheet.jpg');
+      display:none;
+
+      @media (min-width: $screen-md-min) {
+        display:block;
+      }
 
       @media (min-width: $screen-lg-min) {
         top:225px;
