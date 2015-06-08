@@ -175,6 +175,7 @@ section.intro {
   }
 
   h1 {
+    background-size:contain !important;
     margin:0;
     @media (min-width: $screen-lg-min) {
       margin-bottom:20px;
@@ -182,23 +183,20 @@ section.intro {
   }
 
   h1.holidays-sick {
-    display:inline-block;
-    width:277px;
-    height:33px;
     background:url('../images/opvakantie-ziek.png') no-repeat top left;
-    background-size:contain;
+    display:inline-block;
     font-size:0;
+    height:33px;
+    width:277px;
   }
 
   h1.overtime {
-    display:inline-block;
-    width:178px;
-    height:33px;
     background:url('../images/overwerken.png') no-repeat top left;
-    background-size:contain;
-    font-size:0;
-    margin-bottom:20px;
     display:inline-block;
+    font-size:0;
+    height:33px;
+    margin-bottom:20px;
+    width:178px;
   }
 
   .intro-text {
@@ -934,6 +932,13 @@ footer {
 
 /* legal */
 body.legal {
+  h1 {
+    font-size:30px;
+  }
+
+  h2 {
+    font-size:24px;
+  }
   background-color:$yellow;
   margin:30px;
   color:$darkblue;

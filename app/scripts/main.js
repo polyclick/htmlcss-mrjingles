@@ -82,7 +82,7 @@ $(function() {
   // legal popup
   $('.legal-link').click(function(event){
     event.preventDefault();
-    openCenteredPopup('legal.html', 'Voorwaarden en bepalingen', 550, 600);
+    openCenteredPopup('legal.html', 'Voorwaarden en bepalingen', 555, 600);
     return false;
   });
 
