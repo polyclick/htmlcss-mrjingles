@@ -31,6 +31,16 @@ $yellow: #FCEDA7;
 $lightblue: #356595;
 $darkblue: #033E7B;
 
+// keyframes
+@keyframes pointing {
+  0% {
+    transform: translateX(-10px);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
+}
 
 body {
   font-family: 'Lato', sans-serif;
@@ -483,12 +493,17 @@ section.pricing {
 
   .availability {
     margin-bottom:50px;
+
     p {
       margin-top:10px;
     }
   }
 
   .more-info {
+    img {
+      animation: pointing 0.3s ease-in-out infinite alternate;
+    }
+
     @media (min-width: $screen-md-min) {
       margin-left:-34px;
     }
@@ -506,9 +521,16 @@ section.pricing {
     transition: height 750ms;
 
     .more-info-panel-content {
-      color:#9d2d30;
-      font-size: 13px;
+      color:#733531;
+      font-size: 14px;
       margin-top:10px;
+      line-height: 1.25;
+
+      ul {
+        li {
+          margin: 10px 0;
+        }
+      }
     }
   }
 }
