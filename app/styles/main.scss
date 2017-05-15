@@ -46,10 +46,18 @@ body {
   font-family: 'Lato', sans-serif;
   font-size:16px;
   line-height:20px;
-}
-
-html, body {
   overflow-x:hidden;
+
+  &.overlay-shown {
+    overflow: hidden;
+    width: 100%;
+    position: fixed;
+
+    .overlay {
+      pointer-events: all;
+      opacity: 1;
+    }
+  }
 }
 
 .browserupgrade {
@@ -821,6 +829,10 @@ section.contact {
       margin:24px 0;
     }
   }
+
+  .friends {
+    margin-top: 20px;
+  }
 }
 
 /* section overlay image */
@@ -875,6 +887,63 @@ footer {
     transform: translateZ(0); /* fixes flicker bugs in safari */
   }
 }
+
+
+.overlay {
+  cursor: pointer;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  transition: opacity 0.3s ease-in;
+  transform: translateZ(0);
+  pointer-events: none;
+
+  &:active {
+    .overlay-fg {
+      top: 50.2%;
+      left: 50.2%;
+    }
+  }
+}
+
+.overlay-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background-color: $darkblue;
+  opacity: 0.90;
+}
+
+.overlay-fg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  background-color: $yellow;
+  color: $darkblue;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  transition: left 0.05s ease-in-out, top 0.05s ease-in-out;
+  box-shadow: 10px 10px 0px 0px $darkblue;
+}
+
+.overlay-fg-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+}
+
 
 
 /* grass strips */

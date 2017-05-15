@@ -27,6 +27,17 @@ $(function() {
     }
   }
 
+  // utility function to close the overlay
+  function closeOverlay() {
+    $('body').removeClass('overlay-shown');
+  }
+
+  // utility function to open the overlay
+  function openOverlay() {
+    $('body').addClass('overlay-shown');
+    $('.overlay').click(function() { closeOverlay() });
+  }
+
   // utility function: navigate to a specific section
   function navigateToSection(sectionElement) {
 
@@ -160,4 +171,8 @@ $(function() {
       width = $(window).width();
     }
   });
+
+  // open overlay on load
+  openOverlay();
+
 });
